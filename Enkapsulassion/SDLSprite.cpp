@@ -31,3 +31,11 @@ void* SDLSprite::GetData()
 {
     return static_cast<void*>(m_Texture);
 }
+
+void SDLSprite::Render()
+{
+    if (!m_Texture) return;
+
+    SDL_Rect dstRect = { m_X, m_Y, 100, 100 };
+    SDL_RenderCopy(m_Renderer, m_Texture, nullptr, &dstRect);
+}

@@ -10,6 +10,7 @@ public:
     ~SDLSprite();
     bool LoadImage(const char* fileName);
     void* GetData();
+    void Render();
 
 private:
     SDL_Renderer* m_Renderer;

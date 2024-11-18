@@ -7,7 +7,11 @@ public:
 
 	virtual bool LoadImage(const char* fileName) = 0;
 	virtual void* GetData() = 0;
-private:
+
+	virtual void Render() = 0;
+
+	void SetPosition(int x, int y);
+protected:
 	int m_X;
 	int m_Y;
 };

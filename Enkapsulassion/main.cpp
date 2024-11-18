@@ -7,10 +7,7 @@ int main(int argc, char* argv[])
 	window->Init();
 	window->CreateWindow();
 
-	while (true)
-	{
-
-	}
+	window->DrawWindow();
 
 	return 0;
 }
