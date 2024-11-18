@@ -2,12 +2,13 @@
 class Sprite
 {
 public:
-	Sprite() {}
+	Sprite() : m_X(0), m_Y(0) {};
 	virtual ~Sprite() {};
 
 	virtual void LoadImage(const char* fileName) = 0;
-	virtual int GetData() = 0;
+	virtual void* GetData() = 0;
 private:
-	float m_Position[2];
+	int m_X;
+	int m_Y;
 };
 
