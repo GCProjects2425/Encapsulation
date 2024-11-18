@@ -5,7 +5,7 @@ public:
 	Sprite() : m_X(0), m_Y(0) {};
 	virtual ~Sprite() {};
 
-	virtual void LoadImage(const char* fileName) = 0;
+	virtual bool LoadImage(const char* fileName) = 0;
 	virtual void* GetData() = 0;
 private:
 	int m_X;

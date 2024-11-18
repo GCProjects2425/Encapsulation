@@ -1,5 +1,6 @@
 #pragma once
 #include "SDL.h"
+#include "SDL_image.h"
 #include "Sprite.h"
 class SDLSprite :
     public Sprite
@@ -7,7 +8,7 @@ class SDLSprite :
 public:
     SDLSprite(SDL_Renderer* renderer) : m_Renderer(renderer), m_Texture(nullptr) {}
     ~SDLSprite();
-    void LoadImage(const char* fileName);
+    bool LoadImage(const char* fileName);
     void* GetData();
 
 private:
