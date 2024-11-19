@@ -22,13 +22,11 @@ bool RaylibWindow::IsWindowOpen()
 void RaylibWindow::ClearWindow()
 {
 	BeginDrawing();
-	ClearBackground(RAYWHITE);
+	ClearBackground(BLACK);
 }
 
 void RaylibWindow::DrawWindow()
 {
-	DrawText("Congrats! You created your first window!", 190, 200, 20, LIGHTGRAY);
-
 	EndDrawing();
 }
 
