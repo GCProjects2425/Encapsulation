@@ -6,7 +6,6 @@ public:
 	virtual ~Sprite() {};
 
 	virtual bool LoadImage(const char* fileName) = 0;
-	virtual void Draw() = 0;
 	virtual void* GetData() = 0;
 
 	virtual void Render() = 0;

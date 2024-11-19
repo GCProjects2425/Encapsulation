@@ -19,7 +19,6 @@ public:
 	bool IsWindowOpen();
 	void ClearWindow();
 	void DrawWindow();
-	 void DrawSprite(Sprite* sprite,float x, float y);
 
 private:
 	SDL_Window* m_Window;

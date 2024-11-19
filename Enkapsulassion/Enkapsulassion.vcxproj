@@ -160,6 +160,9 @@
   <ItemGroup>
     <Reference Include="DLLs\*.dll" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="pngtree-plant-in-pot-pixel-art-png-image_6681713.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

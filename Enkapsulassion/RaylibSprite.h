@@ -8,8 +8,8 @@ public:
     RaylibSprite() {}
     ~RaylibSprite();
     bool LoadImage(const char* fileName);
-    void Draw();
     void* GetData();
+    void Render();
 private:
     Texture2D texture;
 };

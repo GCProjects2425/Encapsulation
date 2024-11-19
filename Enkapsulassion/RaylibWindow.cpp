@@ -32,7 +32,3 @@ void RaylibWindow::DrawWindow()
 	EndDrawing();
 }
 
-void RaylibWindow::DrawSprite(Sprite* sprite, float x, float y)
-{
-
-}

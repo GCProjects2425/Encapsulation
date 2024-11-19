@@ -13,6 +13,5 @@ public:
 	virtual bool IsWindowOpen() = 0;
 	virtual void ClearWindow() = 0;
 	virtual void DrawWindow() = 0;
-	virtual void DrawSprite(Sprite* sprite,float x, float y) = 0;
 };
 
