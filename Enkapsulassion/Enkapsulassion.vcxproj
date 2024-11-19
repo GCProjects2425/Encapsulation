@@ -141,6 +141,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityBall.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibWindow.cpp" />
@@ -150,6 +152,8 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityBall.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibWindow.h" />
     <ClInclude Include="SDLSprite.h" />

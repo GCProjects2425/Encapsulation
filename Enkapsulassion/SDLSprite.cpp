@@ -1,6 +1,16 @@
 #include "SDLSprite.h"
 #include <iostream>
 
+SDLSprite::SDLSprite(SDL_Renderer* renderer)
+    : m_Renderer(renderer)
+    , m_Texture(nullptr)
+{
+    m_Color.r = 255;
+    m_Color.g = 255;
+    m_Color.b = 255;
+    m_Color.a = 255;
+}
+
 SDLSprite::~SDLSprite()
 {
     if (m_Texture) {
@@ -8,7 +18,7 @@ SDLSprite::~SDLSprite()
     }
 }
 
-bool SDLSprite::LoadImage(const char* fileName)
+bool SDLSprite::LoadImage(const char* fileName, int width, int height)
 {
     SDL_Surface* surface = IMG_Load(fileName);
     if (!surface) {
@@ -24,6 +34,9 @@ bool SDLSprite::LoadImage(const char* fileName)
         return false;
     }
 
+    m_Width = width;
+    m_Height = height;
+
     return true;
 }
 
@@ -36,6 +49,14 @@ void SDLSprite::Render()
 {
     if (!m_Texture) return;
 
-    SDL_Rect dstRect = { m_X, m_Y, 100, 100 };
+    SDL_SetTextureColorMod(m_Texture, m_Color.r, m_Color.g, m_Color.b);
+    SDL_Rect dstRect = { m_X, m_Y, 100, 50 };
     SDL_RenderCopy(m_Renderer, m_Texture, nullptr, &dstRect);
+}
+
+void SDLSprite::RandomColor()
+{
+    m_Color.r = rand() % 256;
+    m_Color.g = rand() % 256;
+    m_Color.b = rand() % 256;
 }

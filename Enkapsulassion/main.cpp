@@ -1,18 +1,56 @@
+#include <vector>
+#include <memory>
+
 #include "SDLWindow.h"
-#include "RaylibWindow.h"
-#include "RaylibSprite.h"
+#include "SDLSprite.h"
+#include "EntityBall.h"
 
 int main(int argc, char* argv[])
 {
-	RaylibWindow* window = new RaylibWindow();
-	RaylibSprite* sprite = new RaylibSprite();
+	SDLWindow* window = new SDLWindow();
 	window->Init();
-	window->CreateWindow();
-	sprite->LoadImage(".//pngtree-plant-in-pot-pixel-art-png-image_6681713.png");
-	sprite->SetPosition(0, 0);
-	while (true) {
+	window->CreateWindow(800, 600);
+
+	/*std::vector<std::unique_ptr<SDLSprite>> sBalls;
+	std::vector<std::unique_ptr<EntityBall>> balls;
+
+	for (size_t i = 0; i < 5; i++)
+	{
+		SDLSprite sdlSprite(window->GetRenderer());
+		if (sdlSprite.LoadImage("resources\\logo-dvd.png", 100, 50)) {
+			SDL_Log("Image loaded!");
+		}
+
+		//sBalls.push_back(std::move(sdlSprite));
+	
+		EntityBall entityBall;
+		entityBall.SetSprite(&sdlSprite);
+
+	}
+	
+
+	SDL_Delay(500);*/
+
+	SDLSprite ball(window->GetRenderer());
+	if (ball.LoadImage("resources\\logo-dvd.png", 100, 50)) {
+		SDL_Log("Image loaded!");
+	}
+
+	EntityBall eball;
+	eball.SetSprite(&ball);
+
+	while (window->IsWindowOpen())
+	{
+		window->HandleEvent();
+
+		//entityBall.Update(0, *window);
+		eball.Update(0, *window);
+		
 		window->ClearWindow();
-		sprite->Render();
+
+		//entityBall.Draw();
+		eball.Draw();
+
 		window->DrawWindow();
 	}
 

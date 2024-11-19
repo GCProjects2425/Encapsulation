@@ -15,7 +15,7 @@ public:
 	~RaylibWindow();
 
 	void Init();
-	void CreateWindow();
+	void CreateWindow(int windowWidth, int windowHeight);
 	bool IsWindowOpen();
 	void ClearWindow();
 	void DrawWindow();

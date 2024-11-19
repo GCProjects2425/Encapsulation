@@ -8,9 +8,9 @@ void RaylibWindow::Init()
 {
 }
 
-void RaylibWindow::CreateWindow()
+void RaylibWindow::CreateWindow(int windowWidth, int windowHeight)
 {
-	InitWindow(800, 600, "raylib [core] example - basic window");
+	InitWindow(windowWidth, windowHeight, "raylib [core] example - basic window");
 	SetTargetFPS(60);
 }
 

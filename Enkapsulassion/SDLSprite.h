@@ -6,14 +6,17 @@ class SDLSprite :
     public Sprite
 {
 public:
-    SDLSprite(SDL_Renderer* renderer) : m_Renderer(renderer), m_Texture(nullptr) {}
+    SDLSprite(SDL_Renderer* renderer);
     ~SDLSprite();
-    bool LoadImage(const char* fileName);
+    bool LoadImage(const char* fileName, int width, int height);
     void* GetData();
     void Render();
+
+    void RandomColor();
 
 private:
     SDL_Renderer* m_Renderer;
     SDL_Texture* m_Texture;
+    SDL_Color m_Color;
 };
 

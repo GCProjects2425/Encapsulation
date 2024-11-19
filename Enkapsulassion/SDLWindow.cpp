@@ -25,21 +25,20 @@ void SDLWindow::Init()
     }
 }
 
-void SDLWindow::CreateWindow()
+void SDLWindow::CreateWindow(int windowWidth, int windowHeight)
 {
-    if (SDL_CreateWindowAndRenderer(320, 240, SDL_WINDOW_RESIZABLE, &m_Window, &m_Renderer) < 0) 
+    if (SDL_CreateWindowAndRenderer(windowWidth, windowHeight, SDL_WINDOW_RESIZABLE, &m_Window, &m_Renderer) < 0) 
     {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't create window and renderer: %s", SDL_GetError());
     }
-}
-
-bool SDLWindow::IsWindowOpen()
-{
-    return false;
+    m_WindowWidth = windowWidth;
+    m_WindowHeight = windowHeight;
+    m_IsOpen = true;
 }
 
 void SDLWindow::ClearWindow()
 {
+    SDL_SetRenderDrawColor(m_Renderer, 0, 0, 0, 255);
     if (SDL_RenderClear(m_Renderer) < 0)
     {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Couldn't clear renderer: %s", SDL_GetError());
@@ -48,12 +47,21 @@ void SDLWindow::ClearWindow()
 
 void SDLWindow::DrawWindow()
 {
-    SDLSprite sdlSprite(m_Renderer);
-    if (sdlSprite.LoadImage("resources\\sprite.png")) {
-        SDL_Log("Image loaded!");
-        sdlSprite.SetPosition(100, 200);
-        SDL_Rect dstRect = { 100, 200, 250, 250 }; // Rectangle de destination
-        SDL_RenderCopy(m_Renderer, static_cast<SDL_Texture*>(sdlSprite.GetData()), nullptr, &dstRect);
-    }
     SDL_RenderPresent(m_Renderer);
+    SDL_Delay(16);
+}
+
+void SDLWindow::HandleEvent()
+{
+    while (SDL_PollEvent(&m_Event)) {
+        if (m_Event.type == SDL_QUIT) 
+        {
+            m_IsOpen = false;
+        }
+        if (m_Event.type == SDL_WINDOWEVENT && m_Event.window.event == SDL_WINDOWEVENT_RESIZED)
+        {
+            m_WindowWidth  = m_Event.window.data1;
+            m_WindowHeight = m_Event.window.data2;
+        }
+    }
 }
