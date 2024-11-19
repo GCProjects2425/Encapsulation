@@ -142,12 +142,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="RaylibSprite.cpp" />
+    <ClCompile Include="RaylibWindow.cpp" />
     <ClCompile Include="SDLSprite.cpp" />
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="RaylibSprite.h" />
+    <ClInclude Include="RaylibWindow.h" />
     <ClInclude Include="SDLSprite.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
