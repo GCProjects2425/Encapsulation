@@ -24,6 +24,10 @@ void GameController::Init(Window* window)
 	m_RightPaddle = new EntityPaddle(m_Window->GetWidth() - (paddle2Sprite->GetWidth()+10), (window->GetHeight() - paddle1Sprite->GetHeight()) / 2, "DOWN", "UP");
 	m_RightPaddle->SetSprite(paddle2Sprite);
 	m_EntityVector.push_back(m_RightPaddle);
+
+	for (const auto& entity : m_EntityVector) {
+		entity->Init(m_Window);
+	}
 }
 
 void GameController::Run() {

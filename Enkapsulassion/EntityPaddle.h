@@ -6,6 +6,7 @@ class EntityPaddle :
 public:
     EntityPaddle(int startX, int startY, const std::string& keyDown, const std::string& keyUp);
 
+    void Init(Window* window) { };
     void Update(Window* window);
 
 private:

@@ -9,6 +9,7 @@ class EntityBall :
 public:
     EntityBall();
 
+    void Init(Window* window);
     void Update(Window* window);
 
     bool CheckCollision(const EntityPaddle& paddle);

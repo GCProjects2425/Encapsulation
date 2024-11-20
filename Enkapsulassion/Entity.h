@@ -10,6 +10,7 @@ public:
 
 	void SetSprite(Sprite* sprite);
 
+	virtual void Init(Window* window) = 0;
 	virtual void Update(Window* window) = 0;
 	virtual void Draw() { m_Sprite->Render(); }
 

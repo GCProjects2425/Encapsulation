@@ -14,17 +14,24 @@ EntityBall::EntityBall()
     m_vY = dist(rng);
 }
 
+void EntityBall::Init(Window* window)
+{
+    m_WindowHeight = window->GetHeight();
+    m_WindowWidth = window->GetWidth();
+}
+
 void EntityBall::Update(Window* window)
 {
     if (!m_Sprite) return;
 
-    m_WindowWidth = window->GetWidth();
-    m_WindowHeight = window->GetHeight();
+    if (m_WindowHeight != window->GetHeight()) {
+        m_Y= window->GetHeight()* m_Y / m_WindowHeight;
+        m_WindowHeight = window->GetHeight();
+    }
 
-    if (m_X > m_WindowWidth || m_Y > m_WindowHeight)
-    {
-        m_X = m_WindowWidth/2;
-        m_Y = m_WindowHeight/2;
+    if (m_WindowWidth != window->GetWidth()) {
+        m_X = window->GetWidth() * m_X / m_WindowWidth;
+        m_WindowWidth = window->GetWidth();
     }
 
     m_X += m_vX;
