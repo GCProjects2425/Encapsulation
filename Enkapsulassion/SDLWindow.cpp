@@ -48,7 +48,7 @@ void SDLWindow::ClearWindow()
 void SDLWindow::DrawWindow()
 {
     SDL_RenderPresent(m_Renderer);
-    SDL_Delay(16);
+    //SDL_Delay(16);
 }
 
 void SDLWindow::HandleEvent()
@@ -64,4 +64,13 @@ void SDLWindow::HandleEvent()
             m_WindowHeight = m_Event.window.data2;
         }
     }
+}
+
+Sprite* SDLWindow::CreateSprite()
+{
+    SDLSprite* ball = new SDLSprite(m_Renderer);
+    if (ball->LoadImage("resources\\logo-dvd.png", 100, 50)) {
+        SDL_Log("Image loaded!");
+    }
+    return ball;
 }

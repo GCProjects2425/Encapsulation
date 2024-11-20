@@ -8,7 +8,6 @@ public:
 		: m_Window(NULL)
 		, m_Renderer(NULL)
 		, m_Event()
-		, Window()
 	{}
 
 	~SDLWindow();
@@ -19,6 +18,8 @@ public:
 	void DrawWindow();
 
 	void HandleEvent();
+
+	Sprite* CreateSprite();
 
 	SDL_Renderer* GetRenderer() { return m_Renderer; }
 

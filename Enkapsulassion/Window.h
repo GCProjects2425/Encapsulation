@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include "raylib.h"
+#include "Sprite.h"
 
 class Window
 {
@@ -13,6 +14,7 @@ public:
 	virtual bool IsWindowOpen() { return m_IsOpen; };
 	virtual void ClearWindow() = 0;
 	virtual void DrawWindow() = 0;
+	virtual Sprite* CreateSprite() = 0;
 
 	virtual void HandleEvent() = 0;
 

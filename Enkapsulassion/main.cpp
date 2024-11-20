@@ -7,37 +7,30 @@
 
 int main(int argc, char* argv[])
 {
-	SDLWindow* window = new SDLWindow();
+	Window* window = new SDLWindow();
 	window->Init();
 	window->CreateWindow(800, 600);
 
-	/*std::vector<std::unique_ptr<SDLSprite>> sBalls;
+	std::vector<std::unique_ptr<Sprite>> sBalls;
 	std::vector<std::unique_ptr<EntityBall>> balls;
 
 	for (size_t i = 0; i < 5; i++)
 	{
-		SDLSprite sdlSprite(window->GetRenderer());
-		if (sdlSprite.LoadImage("resources\\logo-dvd.png", 100, 50)) {
-			SDL_Log("Image loaded!");
-		}
-
+		Sprite* ball = window->CreateSprite();
 		//sBalls.push_back(std::move(sdlSprite));
 	
-		EntityBall entityBall;
-		entityBall.SetSprite(&sdlSprite);
+		EntityBall* entityBall = new EntityBall();
+		entityBall->SetSprite(ball);
 
+		sBalls.push_back(std::move(ball));
 	}
 	
 
 	SDL_Delay(500);*/
-
-	SDLSprite ball(window->GetRenderer());
-	if (ball.LoadImage("resources\\logo-dvd.png", 100, 50)) {
-		SDL_Log("Image loaded!");
-	}
+	Sprite* ball = window->CreateSprite();
 
 	EntityBall eball;
-	eball.SetSprite(&ball);
+	eball.SetSprite(ball);
 
 	while (window->IsWindowOpen())
 	{
