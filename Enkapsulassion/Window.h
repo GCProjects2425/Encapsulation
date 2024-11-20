@@ -1,5 +1,6 @@
 #pragma once
 #include "Sprite.h"
+#include <string>
 
 class Window
 {
@@ -18,6 +19,8 @@ public:
 	virtual void DrawWindow() = 0;
 	virtual void Update() = 0;
 	virtual Sprite* CreateSprite() = 0;
+
+	virtual bool IsKeyPressed(const std::string& key) = 0;
 
 	virtual void HandleEvent() = 0;
 

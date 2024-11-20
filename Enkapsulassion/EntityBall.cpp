@@ -7,7 +7,7 @@ EntityBall::EntityBall()
     , m_WindowHeight(0)
 {
     static std::mt19937 rng(42);
-    std::uniform_int_distribution<int> dist(1, 100);
+    std::uniform_int_distribution<int> dist(1, 5);
 
     m_vX = dist(rng);
     m_vY = dist(rng);

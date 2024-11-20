@@ -40,6 +40,15 @@ Sprite* RaylibWindow::CreateSprite()
 	return sprite;
 }
 
+bool RaylibWindow::IsKeyPressed(const std::string& key)
+{
+	if (key == "W") return RAYLIB_H::IsKeyPressed(KEY_W);
+	if (key == "S") return RAYLIB_H::IsKeyPressed(KEY_S);
+	if (key == "UP") return RAYLIB_H::IsKeyPressed(KEY_UP);
+	if (key == "DOWN") return RAYLIB_H::IsKeyPressed(KEY_DOWN);
+	return false;
+}
+
 void RaylibWindow::HandleEvent()
 {
 	if (WindowShouldClose())

@@ -23,6 +23,8 @@ public:
 
 	Sprite* CreateSprite();
 
+	bool IsKeyPressed(const std::string& key) override;
+
 	void StartFrame() override;
 	void EndFrame() override;
 

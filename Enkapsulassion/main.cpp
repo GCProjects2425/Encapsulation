@@ -16,7 +16,7 @@ int main(int argc, char* argv[])
 	std::vector<Sprite*> sBalls;
 	std::vector<EntityBall*> balls;
 
-	for (size_t i = 0; i < 100; i++)
+	for (size_t i = 0; i < 1; i++)
 	{
 		Sprite* ball = window->CreateSprite();
 		//sBalls.push_back(std::move(sdlSprite));

@@ -18,7 +18,9 @@ public:
 	void ClearWindow();
 	void Update();
 	void DrawWindow();
-	Sprite* CreateSprite() ;
+	Sprite* CreateSprite();
+
+	bool IsKeyPressed(const std::string& key) override;
 
 	void HandleEvent();
 
