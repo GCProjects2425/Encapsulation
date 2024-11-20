@@ -13,12 +13,12 @@ EntityBall::EntityBall()
     m_vY = dist(rng);
 }
 
-void EntityBall::Update(const Window& window)
+void EntityBall::Update(Window* window)
 {
     if (!m_Sprite) return;
 
-    m_WindowWidth = window.GetWidth();
-    m_WindowHeight = window.GetHeight();
+    m_WindowWidth = window->GetWidth();
+    m_WindowHeight = window->GetHeight();
 
     if (m_X > m_WindowWidth || m_Y > m_WindowHeight)
     {

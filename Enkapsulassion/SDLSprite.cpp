@@ -50,7 +50,7 @@ void SDLSprite::Render()
     if (!m_Texture) return;
 
     SDL_SetTextureColorMod(m_Texture, m_Color.r, m_Color.g, m_Color.b);
-    SDL_Rect dstRect = { m_X, m_Y, 100, 50 };
+    SDL_Rect dstRect = { m_X, m_Y, m_Width, m_Height };
     SDL_RenderCopy(m_Renderer, m_Texture, nullptr, &dstRect);
 }
 

@@ -8,7 +8,7 @@ class EntityBall :
 public:
     EntityBall();
 
-    void Update(const Window& window);
+    void Update(Window* window);
 
 private:
     int m_WindowWidth;

@@ -142,7 +142,7 @@ Sprite* SDLWindow::CreateSprite()
 bool SDLWindow::IsKeyPressed(const std::string& key)
 {
     const Uint8* currentKeyStates = SDL_GetKeyboardState(NULL);
-    if (key == "W") return currentKeyStates[SDL_SCANCODE_W];
+    if (key == "Z") return currentKeyStates[SDL_SCANCODE_W];
     if (key == "S") return currentKeyStates[SDL_SCANCODE_S];
     if (key == "UP") return currentKeyStates[SDL_SCANCODE_UP];
     if (key == "DOWN") return currentKeyStates[SDL_SCANCODE_DOWN];
