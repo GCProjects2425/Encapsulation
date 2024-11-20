@@ -1,6 +1,5 @@
 #include "Entity.h"
 
-
 Entity::Entity(int x, int y)
 	: m_Sprite(0)
 	, m_X(x)

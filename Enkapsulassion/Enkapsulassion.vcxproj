@@ -106,6 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>.\Libs\raylib\include;.\Libs\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -127,6 +128,7 @@
       <ConformanceMode>true</ConformanceMode>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <AdditionalIncludeDirectories>.\Libs\raylib\include;.\Libs\SDL\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -144,6 +146,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="EntityBall.cpp" />
     <ClCompile Include="EntityPaddle.cpp" />
+    <ClCompile Include="GameController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="RaylibSprite.cpp" />
     <ClCompile Include="RaylibWindow.cpp" />
@@ -156,6 +159,7 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="EntityBall.h" />
     <ClInclude Include="EntityPaddle.h" />
+    <ClInclude Include="GameController.h" />
     <ClInclude Include="RaylibSprite.h" />
     <ClInclude Include="RaylibWindow.h" />
     <ClInclude Include="SDLSprite.h" />

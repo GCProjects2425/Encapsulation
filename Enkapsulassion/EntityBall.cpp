@@ -29,15 +29,23 @@ void EntityBall::Update(Window* window)
     m_X += m_vX;
     m_Y += m_vY;
 
-    if (m_X <= 0 || m_X + m_Width >= m_WindowWidth) {
-        m_vX = -m_vX;
-        m_Sprite->RandomColor();
-    }
-    if (m_Y <= 0 || m_Y + m_Height >= m_WindowHeight) {
+    if (m_Y <= 0 || m_Y + m_Height >= window->GetHeight()) {
         m_vY = -m_vY;
-        m_Sprite->RandomColor();
     }
+
+    /*if (CheckCollision(*window->Paddle1) || CheckCollision(*window->Paddle2)) {
+        m_vX = -m_vX;
+    }*/
 
 
     m_Sprite->SetPosition(m_X, m_Y);
+}
+
+bool EntityBall::CheckCollision(const EntityPaddle& paddle)
+{
+    if (m_X + m_Width > paddle.GetX() && m_X < paddle.GetX() + paddle.GetWidth() &&
+        m_Y + m_Height > paddle.GetY() && m_Y < paddle.GetY() + paddle.GetHeight()) {
+        return true;
+    }
+    return false;
 }

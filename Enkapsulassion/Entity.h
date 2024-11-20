@@ -12,6 +12,12 @@ public:
 
 	virtual void Update(Window* window) = 0;
 	virtual void Draw() { m_Sprite->Render(); }
+
+	const int GetX() const { return m_X; }
+	const int GetY() const { return m_Y; }
+
+	const int GetWidth() const { return m_Width; }
+	const int GetHeight() const { return m_Height; }
 protected:
 	Sprite* m_Sprite;
 	int m_X, m_Y;

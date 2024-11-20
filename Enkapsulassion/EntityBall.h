@@ -1,5 +1,6 @@
 #pragma once
 #include "Entity.h"
+#include "EntityPaddle.h"
 #include <cstdlib>
 #include <ctime>
 class EntityBall :
@@ -9,6 +10,8 @@ public:
     EntityBall();
 
     void Update(Window* window);
+
+    bool CheckCollision(const EntityPaddle& paddle);
 
 private:
     int m_WindowWidth;
