@@ -40,8 +40,8 @@ void RaylibWindow::HandleEvent()
 	if (WindowShouldClose())
 		m_IsOpen = false;
 	if (IsWindowResized()) {
-		int newWidth = GetScreenWidth();
-		int newHeight = GetScreenHeight();
+		m_WindowWidth = GetScreenWidth();
+		m_WindowHeight = GetScreenHeight();
 	}
 }
 
