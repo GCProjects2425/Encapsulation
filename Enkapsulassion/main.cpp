@@ -8,6 +8,8 @@
 int main(int argc, char* argv[])
 {
 	Window* window = new SDLWindow();
+	//Window* window = new RaylibWindow();
+
 	window->Init();
 	window->CreateWindow(800, 600);
 
@@ -27,20 +29,16 @@ int main(int argc, char* argv[])
 		balls.push_back(std::move(entityBall));
 
 	}
-	
-
-	/*SDL_Delay(500);
-	Sprite* ball = window->CreateSprite();
-
-	EntityBall eball;
-	eball.SetSprite(ball);*/
 
 	while (window->IsWindowOpen())
 	{
+		window->StartFrame();
+
+		window->Update();
 		window->HandleEvent();
 
 		for (const auto& entity : balls) {
-			entity->Update(0, *window);
+			entity->Update(*window);
 		}
 
 		window->ClearWindow();
@@ -51,12 +49,11 @@ int main(int argc, char* argv[])
 			sprite->Render();
 		}
 
-		//entityBall.Draw();
-		//eball.Draw();
-
-		SDL_Delay(16);
+		window->DrawFPSCounter();
 
 		window->DrawWindow();
+
+		window->EndFrame();
 	}
 
 	return 0;

@@ -8,7 +8,7 @@ class EntityBall :
 public:
     EntityBall();
 
-    void Update(float deltaTime, const Window& window);
+    void Update(const Window& window);
 
 private:
     int m_WindowWidth;

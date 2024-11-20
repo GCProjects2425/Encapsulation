@@ -10,6 +10,8 @@ bool RaylibSprite::LoadImage(const char* fileName,int width, int height)
 	 RaylibSprite::texture = LoadTexture(fileName);
 	 texture.width = width;
 	 texture.height = height;
+	 m_Width = width;
+	 m_Height = height;
 	 return true;
 }
 

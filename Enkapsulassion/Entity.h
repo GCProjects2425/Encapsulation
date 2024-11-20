@@ -10,7 +10,7 @@ public:
 
 	void SetSprite(Sprite* sprite);
 
-	virtual void Update(float deltaTime, const Window& window) = 0;
+	virtual void Update(const Window& window) = 0;
 	virtual void Draw() { m_Sprite->Render(); }
 protected:
 	Sprite* m_Sprite;

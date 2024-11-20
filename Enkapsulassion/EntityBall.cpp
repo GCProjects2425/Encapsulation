@@ -13,7 +13,7 @@ EntityBall::EntityBall()
     m_vY = dist(rng);
 }
 
-void EntityBall::Update(float deltaTime, const Window& window)
+void EntityBall::Update(const Window& window)
 {
     if (!m_Sprite) return;
 

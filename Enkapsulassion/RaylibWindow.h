@@ -9,10 +9,6 @@ class RaylibWindow :
 {
 public:
 	RaylibWindow()
-		: m_Window(NULL)
-		, m_Renderer(NULL)
-		, m_Event()
-		, Window()
 	{}
 
 	~RaylibWindow();
@@ -20,17 +16,12 @@ public:
 	void Init();
 	void CreateWindow(int windowWidth, int windowHeight);
 	void ClearWindow();
+	void Update();
 	void DrawWindow();
 	Sprite* CreateSprite() ;
 
 	void HandleEvent();
 
-	SDL_Renderer* GetRenderer() { return m_Renderer; }
-
-private:
-	SDL_Window* m_Window;
-	SDL_Renderer* m_Renderer;
-
-	SDL_Event m_Event;
+	void DrawFPSCounter();
 };
 
