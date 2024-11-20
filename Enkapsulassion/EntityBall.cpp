@@ -1,4 +1,5 @@
 #include "EntityBall.h"
+#include "GameController.h"
 #include <random>
 
 EntityBall::EntityBall()
@@ -31,11 +32,13 @@ void EntityBall::Update(Window* window)
 
     if (m_Y <= 0 || m_Y + m_Height >= window->GetHeight()) {
         m_vY = -m_vY;
+        m_Sprite->RandomColor();
     }
 
-    /*if (CheckCollision(*window->Paddle1) || CheckCollision(*window->Paddle2)) {
+    if (CheckCollision(*GameController::GetInstance().GetLeftPaddle()) || CheckCollision(*GameController::GetInstance().GetRightPaddle())) {
         m_vX = -m_vX;
-    }*/
+        m_Sprite->RandomColor();
+    }
 
 
     m_Sprite->SetPosition(m_X, m_Y);
@@ -43,8 +46,13 @@ void EntityBall::Update(Window* window)
 
 bool EntityBall::CheckCollision(const EntityPaddle& paddle)
 {
-    if (m_X + m_Width > paddle.GetX() && m_X < paddle.GetX() + paddle.GetWidth() &&
-        m_Y + m_Height > paddle.GetY() && m_Y < paddle.GetY() + paddle.GetHeight()) {
+    float ballRight = m_X + m_Width;
+    float ballBottom = m_Y + m_Height;
+    float paddleRight = paddle.GetX() + paddle.GetWidth();
+    float paddleBottom = paddle.GetY() + paddle.GetHeight();
+
+    if (ballRight > paddle.GetX() && m_X < paddleRight &&
+        ballBottom > paddle.GetY() && m_Y < paddleBottom) {
         return true;
     }
     return false;
