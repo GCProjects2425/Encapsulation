@@ -2,7 +2,7 @@
 #include <memory>
 
 #include "SDLWindow.h"
-#include "SDLSprite.h"
+#include "RaylibWindow.h"
 #include "EntityBall.h"
 
 int main(int argc, char* argv[])
@@ -18,6 +18,7 @@ int main(int argc, char* argv[])
 	{
 		Sprite* ball = window->CreateSprite();
 		//sBalls.push_back(std::move(sdlSprite));
+		ball->LoadImage("resources\\logo-dvd.png", 100, 50);
 	
 		EntityBall* entityBall = new EntityBall();
 		entityBall->SetSprite(ball);

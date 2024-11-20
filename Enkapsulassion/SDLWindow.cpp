@@ -64,14 +64,16 @@ void SDLWindow::HandleEvent()
             m_WindowWidth  = m_Event.window.data1;
             m_WindowHeight = m_Event.window.data2;
         }
+        if (m_Event.type == SDL_KEYDOWN)
+        {
+            m_IsFullScreen = !m_IsFullScreen;
+            SDL_SetWindowFullscreen(m_Window, SDL_WINDOW_FULLSCREEN);
+        }
     }
 }
 
 Sprite* SDLWindow::CreateSprite()
 {
     SDLSprite* ball = new SDLSprite(m_Renderer);
-    if (ball->LoadImage("resources\\logo-dvd.png", 100, 50)) {
-        SDL_Log("Image loaded!");
-    }
-    return std::move(ball);
+    return ball;
 }

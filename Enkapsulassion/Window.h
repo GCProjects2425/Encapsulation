@@ -6,7 +6,7 @@
 class Window
 {
 public:
-	Window() : m_WindowWidth(0), m_WindowHeight(0), m_IsOpen(false) {}
+	Window() : m_WindowWidth(0), m_WindowHeight(0), m_IsOpen(false), m_IsFullScreen(false) {}
 	virtual ~Window() {};
 
 	virtual void Init() = 0;
@@ -26,5 +26,6 @@ protected:
 	int m_WindowHeight;
 
 	bool m_IsOpen;
+	bool m_IsFullScreen;
 };
 
