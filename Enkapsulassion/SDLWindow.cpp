@@ -1,5 +1,6 @@
 #include "SDLWindow.h"
 #include "SDLSprite.h"
+#include <memory>
 
 SDLWindow::~SDLWindow()
 {
@@ -72,5 +73,5 @@ Sprite* SDLWindow::CreateSprite()
     if (ball->LoadImage("resources\\logo-dvd.png", 100, 50)) {
         SDL_Log("Image loaded!");
     }
-    return ball;
+    return std::move(ball);
 }

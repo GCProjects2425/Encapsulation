@@ -1,13 +1,16 @@
 #include "EntityBall.h"
+#include <random>
 
 EntityBall::EntityBall()
     : Entity(400, 300)
     , m_WindowWidth(0)
     , m_WindowHeight(0)
 {
-    srand(static_cast<unsigned>(time(nullptr)));
-    m_vX = (rand() % 5) + 1;
-    m_vY = (rand() % 5) + 1;
+    static std::mt19937 rng(42);
+    std::uniform_int_distribution<int> dist(1, 100);
+
+    m_vX = dist(rng);
+    m_vY = dist(rng);
 }
 
 void EntityBall::Update(float deltaTime, const Window& window)
