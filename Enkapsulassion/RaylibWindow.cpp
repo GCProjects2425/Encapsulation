@@ -69,8 +69,7 @@ void RaylibWindow::DrawScore()
 {
 	int leftScore = GameController::GetInstance().GetLeftPaddle()->GetScore();
 	int rightScore = GameController::GetInstance().GetRightPaddle()->GetScore();
-
-	DrawText((std::to_string(leftScore) + " | " + std::to_string(rightScore)).c_str(), GetScreenWidth() / 2, 20, 10, WHITE);
+	DrawText((std::to_string(leftScore) + " | " + std::to_string(rightScore)).c_str(), GetScreenWidth() / 2, 10, 16 * m_WindowHeight / 800, WHITE);
 	
 }
 
