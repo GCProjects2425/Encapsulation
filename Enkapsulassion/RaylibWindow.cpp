@@ -1,4 +1,5 @@
 #include "RaylibWindow.h"
+#include "GameController.h"
 
 RaylibWindow::~RaylibWindow()
 {
@@ -66,5 +67,10 @@ void RaylibWindow::DrawFPSCounter()
 
 void RaylibWindow::DrawScore()
 {
+	int leftScore = GameController::GetInstance().GetLeftPaddle()->GetScore();
+	int rightScore = GameController::GetInstance().GetRightPaddle()->GetScore();
+
+	DrawText((std::to_string(leftScore) + " | " + std::to_string(rightScore)).c_str(), GetScreenWidth() / 2, 20, 10, WHITE);
+	
 }
 
