@@ -297,7 +297,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Raylib|x64'">
@@ -317,7 +319,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_SDL|x64'">
@@ -337,7 +341,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -361,7 +367,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Raylib|x64'">
@@ -385,7 +393,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_SDL|x64'">
@@ -409,7 +419,9 @@
       <AdditionalLibraryDirectories>.\Libs\raylib\lib;.\Libs\SDL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"</Command>
+      <Command>xcopy /Y /F "$(ProjectDir)DLLs\*.dll" "$(OutDir)"
+
+xcopy /Y /F /E "$(ProjectDir)resources\*" "$(OutDir)resources\"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
