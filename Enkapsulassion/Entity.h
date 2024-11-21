@@ -34,5 +34,7 @@ protected:
 	ETeam m_currentTeam;
 	int m_X, m_Y;
 	int m_Width, m_Height;
+	int m_WindowWidth;
+	int m_WindowHeight;
 };
 

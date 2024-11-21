@@ -15,8 +15,6 @@ public:
     bool CheckCollision(EntityPaddle& paddle);
 
 private:
-    int m_WindowWidth;
-    int m_WindowHeight;
     float m_MaxSpeed;
     float m_vX, m_vY;
 };
