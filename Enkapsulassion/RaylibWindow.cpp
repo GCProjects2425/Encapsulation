@@ -42,10 +42,10 @@ Sprite* RaylibWindow::CreateSprite()
 
 bool RaylibWindow::IsKeyPressed(const std::string& key)
 {
-	if (key == "Z") return RAYLIB_H::IsKeyPressed(KEY_Z);
-	if (key == "S") return RAYLIB_H::IsKeyPressed(KEY_S);
-	if (key == "UP") return RAYLIB_H::IsKeyPressed(KEY_UP);
-	if (key == "DOWN") return RAYLIB_H::IsKeyPressed(KEY_DOWN);
+	if (key == "Z") return RAYLIB_H::IsKeyDown(KEY_W);
+	if (key == "S") return RAYLIB_H::IsKeyDown(KEY_S);
+	if (key == "UP") return RAYLIB_H::IsKeyDown(KEY_UP);
+	if (key == "DOWN") return RAYLIB_H::IsKeyDown(KEY_DOWN);
 	return false;
 }
 

@@ -30,6 +30,7 @@ public:
 	virtual void StartFrame() {};
 	virtual void EndFrame() {};
 	virtual void DrawFPSCounter() = 0;
+	virtual void DrawScore() = 0;
 
 	const float GetDeltaTime() const { return m_DeltaTime;  }
 

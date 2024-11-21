@@ -37,7 +37,7 @@ void SDLWindow::Init()
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_image Initialization Error: %s", IMG_GetError());
     }
 
-    if (TTF_Init() == 0) {
+    if (TTF_Init() < 0) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "SDL_ttf Initialization Error: %s", TTF_GetError());
     }
 }
@@ -127,6 +127,24 @@ void SDLWindow::DrawFPSCounter()
     SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
 
     SDL_Rect rect = { 10, 10, surface->w, surface->h };
+    SDL_RenderCopy(m_Renderer, texture, nullptr, &rect);
+
+    SDL_FreeSurface(surface);
+    SDL_DestroyTexture(texture);
+}
+
+void SDLWindow::DrawScore()
+{
+    int leftScore = GameController::GetInstance().GetLeftPaddle()->GetScore();
+    int rightScore = GameController::GetInstance().GetRightPaddle()->GetScore();
+
+    std::string scoreText = std::to_string(leftScore) + " | " + std::to_string(rightScore);
+    SDL_Color color = { 255, 255, 255, 255 };
+
+    SDL_Surface* surface = TTF_RenderText_Solid(m_Font, scoreText.c_str(), color);
+    SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
+
+    SDL_Rect rect = { (m_WindowWidth-surface->w)/2, 10, surface->w, surface->h };
     SDL_RenderCopy(m_Renderer, texture, nullptr, &rect);
 
     SDL_FreeSurface(surface);

@@ -1,6 +1,7 @@
 #pragma once
 #include "SDL.h"
 #include "SDL_ttf.h"
+#include "GameController.h"
 #include "Window.h"
 class SDLWindow :
     public Window
@@ -20,6 +21,7 @@ public:
 	void HandleEvent();
 
 	void DrawFPSCounter();
+	void DrawScore();
 
 	Sprite* CreateSprite();
 
