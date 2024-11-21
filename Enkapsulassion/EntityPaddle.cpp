@@ -8,8 +8,23 @@ EntityPaddle::EntityPaddle(int startX, int startY, const std::string& keyDown, c
     m_currentTeam = team;
 }
 
+void EntityPaddle::Init(Window* window)
+{
+    m_WindowHeight = window->GetHeight();
+    m_WindowWidth = window->GetWidth();
+}
+
 void EntityPaddle::Update(Window* window)
 {
+    if (m_WindowHeight != window->GetHeight()) {
+        m_Y = window->GetHeight() * m_Y / m_WindowHeight;
+        m_WindowHeight = window->GetHeight();
+    }
+
+    if (m_WindowWidth != window->GetWidth()) {
+        m_X = window->GetWidth() * m_X / m_WindowWidth;
+        m_WindowWidth = window->GetWidth();
+    }
     if (window->IsKeyPressed(m_KeyUp) && m_Y > 0) {
         m_Y -= m_Speed * window->GetWidth()/1920;
     }

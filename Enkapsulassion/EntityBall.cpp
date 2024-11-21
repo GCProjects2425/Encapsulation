@@ -4,8 +4,6 @@
 
 EntityBall::EntityBall()
     : Entity(400, 300)
-    , m_WindowWidth(0)
-    , m_WindowHeight(0)
     , m_MaxSpeed(1)
 {
     static std::mt19937 rng(42);
