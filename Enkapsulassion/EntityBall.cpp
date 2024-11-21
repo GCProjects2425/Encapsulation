@@ -45,8 +45,8 @@ void EntityBall::Update(Window* window)
         m_Y = m_WindowHeight / 2;
     }
 
-    m_X += m_vX*m_MaxSpeed;
-    m_Y += m_vY*m_MaxSpeed;
+    m_X += m_vX*m_MaxSpeed * m_WindowHeight/800;
+    m_Y += m_vY*m_MaxSpeed * m_WindowHeight / 600;
 
     if (m_Y <= 0 || m_Y + m_Height >= window->GetHeight()) {
         m_vY = -m_vY;
