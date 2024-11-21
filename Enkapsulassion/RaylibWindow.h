@@ -25,5 +25,6 @@ public:
 	void HandleEvent();
 
 	void DrawFPSCounter();
+	void DrawScore();
 };
 

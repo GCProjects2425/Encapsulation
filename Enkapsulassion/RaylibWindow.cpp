@@ -64,3 +64,7 @@ void RaylibWindow::DrawFPSCounter()
 	DrawFPS(10, 10);
 }
 
+void RaylibWindow::DrawScore()
+{
+}
+

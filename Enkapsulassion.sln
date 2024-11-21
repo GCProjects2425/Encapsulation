@@ -7,12 +7,24 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Enkapsulassion", "Enkapsula
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug_Raylib|x64 = Debug_Raylib|x64
+		Debug_Raylib|x86 = Debug_Raylib|x86
+		Debug_SDL|x64 = Debug_SDL|x64
+		Debug_SDL|x86 = Debug_SDL|x86
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_Raylib|x64.ActiveCfg = Debug_Raylib|x64
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_Raylib|x64.Build.0 = Debug_Raylib|x64
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_Raylib|x86.ActiveCfg = Debug_Raylib|Win32
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_Raylib|x86.Build.0 = Debug_Raylib|Win32
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_SDL|x64.ActiveCfg = Debug_SDL|x64
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_SDL|x64.Build.0 = Debug_SDL|x64
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_SDL|x86.ActiveCfg = Debug_SDL|Win32
+		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug_SDL|x86.Build.0 = Debug_SDL|Win32
 		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug|x64.ActiveCfg = Debug|x64
 		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug|x64.Build.0 = Debug|x64
 		{DE6D647E-3D94-4F4A-8B9E-46B31D5A6DAB}.Debug|x86.ActiveCfg = Debug|Win32

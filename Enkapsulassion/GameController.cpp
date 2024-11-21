@@ -47,6 +47,8 @@ void GameController::Run() {
 		for (const auto& entity : m_EntityVector) {
 			entity->Draw();
 		}
+
+		m_Window->DrawScore();
 		m_Window->DrawFPSCounter();
 		m_Window->DrawWindow();
 
