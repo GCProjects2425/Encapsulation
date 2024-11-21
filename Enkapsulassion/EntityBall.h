@@ -12,11 +12,12 @@ public:
     void Init(Window* window);
     void Update(Window* window);
 
-    bool CheckCollision(const EntityPaddle& paddle);
+    bool CheckCollision(EntityPaddle& paddle);
 
 private:
     int m_WindowWidth;
     int m_WindowHeight;
-    int m_vX, m_vY;
+    float m_MaxSpeed;
+    float m_vX, m_vY;
 };
 

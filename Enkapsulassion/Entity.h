@@ -27,6 +27,7 @@ public:
 	const int GetWidth() const { return m_Width; }
 	const int GetHeight() const { return m_Height; }
 
+	Sprite* GetSprite() { return m_Sprite; }
 	const ETeam& GetCurrentTeam() const { return m_currentTeam; }
 protected:
 	Sprite* m_Sprite;

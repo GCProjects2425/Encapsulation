@@ -6,6 +6,7 @@ EntityBall::EntityBall()
     : Entity(400, 300)
     , m_WindowWidth(0)
     , m_WindowHeight(0)
+    , m_MaxSpeed(1)
 {
     static std::mt19937 rng(42);
     std::uniform_int_distribution<int> dist(1, 5);
@@ -34,8 +35,8 @@ void EntityBall::Update(Window* window)
         m_WindowWidth = window->GetWidth();
     }
 
-    m_X += m_vX;
-    m_Y += m_vY;
+    m_X += m_vX*m_MaxSpeed;
+    m_Y += m_vY*m_MaxSpeed;
 
     if (m_Y <= 0 || m_Y + m_Height >= window->GetHeight()) {
         m_vY = -m_vY;
@@ -51,7 +52,7 @@ void EntityBall::Update(Window* window)
     m_Sprite->SetPosition(m_X, m_Y);
 }
 
-bool EntityBall::CheckCollision(const EntityPaddle& paddle)
+bool EntityBall::CheckCollision(EntityPaddle& paddle)
 {
     float ballRight = m_X + m_Width;
     float ballBottom = m_Y + m_Height;
@@ -62,6 +63,8 @@ bool EntityBall::CheckCollision(const EntityPaddle& paddle)
         ballBottom > paddle.GetY() && m_Y < paddleBottom) {
         if (m_currentTeam == paddle.GetCurrentTeam()) return false;
         m_currentTeam = paddle.GetCurrentTeam();
+        paddle.GetSprite()->RandomColor();
+        m_MaxSpeed += 0.5;
         return true;
     }
     return false;
