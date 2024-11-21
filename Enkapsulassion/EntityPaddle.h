@@ -10,6 +10,7 @@ public:
     void Update(Window* window);
 
     int GetScore() { return m_Score; };
+    void IncreaseScore() { m_Score++; }
 private:
     std::string m_KeyDown, m_KeyUp;
     int m_Speed;

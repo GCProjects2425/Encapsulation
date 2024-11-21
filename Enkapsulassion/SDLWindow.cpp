@@ -53,7 +53,7 @@ void SDLWindow::CreateWindow(int windowWidth, int windowHeight)
     m_WindowHeight = windowHeight;
     m_IsOpen = true;
 
-    m_Font = TTF_OpenFont("resources\\basic_font.ttf", 10);
+    m_Font = TTF_OpenFont("resources\\basic_font.ttf", 16);
     if (!m_Font) {
         SDL_LogError(SDL_LOG_CATEGORY_APPLICATION, "Failed to load font:  %s", TTF_GetError());
     }
@@ -120,7 +120,7 @@ void SDLWindow::HandleEvent()
 
 void SDLWindow::DrawFPSCounter()
 {
-    std::string fpsText = "FPS: " + std::to_string(1.f/m_DeltaTime);
+    std::string fpsText = std::to_string((int)round(1.f/m_DeltaTime)) + " FPS";
     SDL_Color color = { 0, 255, 0, 255 };
 
     SDL_Surface* surface = TTF_RenderText_Solid(m_Font, fpsText.c_str(), color);
@@ -144,7 +144,7 @@ void SDLWindow::DrawScore()
     SDL_Surface* surface = TTF_RenderText_Solid(m_Font, scoreText.c_str(), color);
     SDL_Texture* texture = SDL_CreateTextureFromSurface(m_Renderer, surface);
 
-    SDL_Rect rect = { (m_WindowWidth-surface->w)/2, 10, surface->w, surface->h };
+    SDL_Rect rect = { (m_WindowWidth/2)-(surface->w/2), 10, surface->w, surface->h };
     SDL_RenderCopy(m_Renderer, texture, nullptr, &rect);
 
     SDL_FreeSurface(surface);

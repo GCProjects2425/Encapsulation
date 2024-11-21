@@ -33,6 +33,18 @@ void EntityBall::Update(Window* window)
         m_WindowWidth = window->GetWidth();
     }
 
+    if (m_X > m_WindowWidth || (m_X+m_Width) < 0)
+    {
+        if (m_currentTeam == EntityPaddle::ETeam_Left)
+            GameController::GetInstance().GetLeftPaddle()->IncreaseScore();
+        if (m_currentTeam == EntityPaddle::ETeam_Right)
+            GameController::GetInstance().GetRightPaddle()->IncreaseScore();
+        m_currentTeam = EntityPaddle::ETeam_None;
+        m_MaxSpeed = 1;
+        m_X = m_WindowWidth / 2;
+        m_Y = m_WindowHeight / 2;
+    }
+
     m_X += m_vX*m_MaxSpeed;
     m_Y += m_vY*m_MaxSpeed;
 
