@@ -60,6 +60,8 @@ bool EntityBall::CheckCollision(const EntityPaddle& paddle)
 
     if (ballRight > paddle.GetX() && m_X < paddleRight &&
         ballBottom > paddle.GetY() && m_Y < paddleBottom) {
+        if (m_currentTeam == paddle.GetCurrentTeam()) return false;
+        m_currentTeam = paddle.GetCurrentTeam();
         return true;
     }
     return false;

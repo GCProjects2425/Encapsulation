@@ -4,7 +4,7 @@ class EntityPaddle :
     public Entity 
 {
 public:
-    EntityPaddle(int startX, int startY, const std::string& keyDown, const std::string& keyUp);
+    EntityPaddle(int startX, int startY, const std::string& keyDown, const std::string& keyUp, ETeam team);
 
     void Init(Window* window) { };
     void Update(Window* window);

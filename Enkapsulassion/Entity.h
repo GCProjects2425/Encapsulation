@@ -8,6 +8,13 @@ public:
 
 	virtual ~Entity() {}
 
+	enum ETeam
+	{
+		ETeam_None = 0,
+		ETeam_Left,
+		ETeam_Right
+	};
+
 	void SetSprite(Sprite* sprite);
 
 	virtual void Init(Window* window) = 0;
@@ -19,8 +26,11 @@ public:
 
 	const int GetWidth() const { return m_Width; }
 	const int GetHeight() const { return m_Height; }
+
+	const ETeam& GetCurrentTeam() const { return m_currentTeam; }
 protected:
 	Sprite* m_Sprite;
+	ETeam m_currentTeam;
 	int m_X, m_Y;
 	int m_Width, m_Height;
 };

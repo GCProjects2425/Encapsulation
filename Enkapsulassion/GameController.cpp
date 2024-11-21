@@ -14,14 +14,14 @@ void GameController::Init(Window* window)
 	// Init paddle 1
 	Sprite* paddle1Sprite = window->CreateSprite();
 	paddle1Sprite->LoadImage("resources\\paddle.png", 10, 150);
-    m_LeftPaddle = new EntityPaddle(20, (window->GetHeight()-paddle1Sprite->GetHeight())/2, "S", "Z");
+    m_LeftPaddle = new EntityPaddle(20, (window->GetHeight()-paddle1Sprite->GetHeight())/2, "S", "Z", Entity::ETeam_Left);
 	m_LeftPaddle->SetSprite(paddle1Sprite);
 	m_EntityVector.push_back(m_LeftPaddle);
 
 	// Init paddle 2
 	Sprite* paddle2Sprite = window->CreateSprite();
 	paddle2Sprite->LoadImage("resources\\paddle.png", 10, 150);
-	m_RightPaddle = new EntityPaddle(m_Window->GetWidth() - (paddle2Sprite->GetWidth()+10), (window->GetHeight() - paddle1Sprite->GetHeight()) / 2, "DOWN", "UP");
+	m_RightPaddle = new EntityPaddle(m_Window->GetWidth() - (paddle2Sprite->GetWidth()+10), (window->GetHeight() - paddle1Sprite->GetHeight()) / 2, "DOWN", "UP", Entity::ETeam_Right);
 	m_RightPaddle->SetSprite(paddle2Sprite);
 	m_EntityVector.push_back(m_RightPaddle);
 

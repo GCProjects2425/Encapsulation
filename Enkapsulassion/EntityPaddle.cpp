@@ -1,10 +1,11 @@
 #include "EntityPaddle.h"
 
-EntityPaddle::EntityPaddle(int startX, int startY, const std::string& keyDown, const std::string& keyUp)
+EntityPaddle::EntityPaddle(int startX, int startY, const std::string& keyDown, const std::string& keyUp, ETeam team)
     : Entity(startX, startY), m_Speed(16)
 {
     m_KeyDown = keyDown;
     m_KeyUp = keyUp;
+    m_currentTeam = team;
 }
 
 void EntityPaddle::Update(Window* window)
